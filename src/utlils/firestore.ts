@@ -16,8 +16,6 @@ export function FirestoreService() {
   const app = initializeApp(configFirebase);
   const db = getFirestore(app);
 
-  console.log(configFirebase);
-
   // Functions
   const getDocuments = async (collectionParam) => {
     try {

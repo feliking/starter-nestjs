@@ -1,4 +1,5 @@
 export const configFirebase = {
+  
   apiKey: process.env.API_KEY,
   authDomain: process.env.AUTH_DOMAIN,
   projectId: process.env.PROJECT_ID,
@@ -9,5 +10,6 @@ export const configFirebase = {
 };
 
 export const configJwt = {
+  
   secret: process.env.SECRET,
 };
