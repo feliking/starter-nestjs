@@ -18,6 +18,8 @@ import { ParamService } from './services/param.service';
 import { OrderController } from './controllers/order.controller';
 import { OrderService } from './services/order.service';
 import { ConfigModule } from '@nestjs/config';
+import { LotteryController } from './controllers/lottery.controller';
+import { LotteryService } from './services/lottery.service';
 
 @Module({
   imports: [
@@ -33,6 +35,7 @@ import { ConfigModule } from '@nestjs/config';
     DeliveryPointController,
     ParamController,
     OrderController,
+    LotteryController
   ],
   providers: [
     UserService,
@@ -43,6 +46,7 @@ import { ConfigModule } from '@nestjs/config';
     DeliveryPointService,
     ParamService,
     OrderService,
+    LotteryService
   ],
 })
 export class AdminModule {}
