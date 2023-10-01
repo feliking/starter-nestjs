@@ -10,6 +10,11 @@ export class LotteryService {
     return getDocuments('lotteries');
   }
 
+  async getLottery(id: string) {
+    const { getDocument } = FirestoreService();
+    return await getDocument('lotteries', id);
+  }
+
   async create(datos: CreateLotteryDto) {
     const { saveDocument } = FirestoreService();
     await saveDocument('lotteries', datos);

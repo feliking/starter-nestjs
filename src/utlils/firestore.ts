@@ -37,6 +37,7 @@ export function FirestoreService() {
       const document = await getDoc(doc(db, collectionParam, id));
       return { id: document.id, ...document.data() };
     } catch (error) {
+      console.log(error)
       throw new BadRequestException(
         'Ocurrió un error al obtener la información del documento',
       );

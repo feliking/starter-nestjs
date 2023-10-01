@@ -13,6 +13,7 @@ import { BaseController } from 'src/common/base-controller';
 import { LotteryService } from '../services/lottery.service';
 import { CreateLotteryDto } from '../dto/create-lottery.dto';
 import { UpdateLotteryDto } from '../dto/update-lottery.dto';
+import { ParamIdDto } from '../dto/ParamId.dto';
 
 @UseGuards(AuthGuard)
 @Controller('admin/lottery')
@@ -24,6 +25,12 @@ export class LotteryController extends BaseController {
   @Get()
   async getLotteries() {
     const result = await this.lotteryService.getLotteries();
+    return this.success(result);
+  }
+
+  @Get(':id')
+  async getLottery(@Param() param: ParamIdDto) {
+    const result = await this.lotteryService.getLottery(param.id);
     return this.success(result);
   }
 
