@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { FirestoreService } from 'src/utlils/firestore';
 import { CreateBannerDto } from '../dto/create-banner.dto';
-import { CreateCategoryDto } from '../dto/create-category.dto';
 
 @Injectable()
 export class BannerService {
