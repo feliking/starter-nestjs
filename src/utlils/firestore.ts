@@ -26,6 +26,7 @@ export function FirestoreService() {
       });
       return result;
     } catch (error) {
+      console.log(error)
       throw new BadRequestException(
         'Ocurrió un error al obtener la información',
       );
@@ -49,6 +50,7 @@ export function FirestoreService() {
       const savedDocument = await addDoc(collection(db, collectionParam), data);
       return savedDocument;
     } catch (error) {
+      console.log(error)
       throw new BadRequestException('Ocurrió un error al guardar el documento');
     }
   };
@@ -57,6 +59,7 @@ export function FirestoreService() {
     try {
       await updateDoc(doc(db, collectionParam, id), data);
     } catch (error) {
+      console.log(error)
       throw new BadRequestException(
         'Ocurrió un error al actualizar el documento',
       );
@@ -67,6 +70,7 @@ export function FirestoreService() {
     try {
       await deleteDoc(doc(db, collectionParam, id));
     } catch (error) {
+      console.log(error)
       throw new BadRequestException('Ocurrió un error al borrar el documento');
     }
   };

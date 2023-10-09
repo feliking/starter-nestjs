@@ -15,8 +15,12 @@ export class BotController extends BaseController {
 
   @Post()
   async replyBot(@Body() datos: any) {
+    console.log(datos)
     if(datos.message.includes('P-')){
-      return await this.botService.completeOrder(datos.message)
+      return await this.botService.completeOrder(datos)
+    }
+    if(datos.message.toLowerCase().includes('.confirmar')) {
+      return await this.botService.confirmOrder(datos)
     }
     return []
   }
