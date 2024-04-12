@@ -22,6 +22,8 @@ import { LotteryController } from './controllers/lottery.controller';
 import { LotteryService } from './services/lottery.service';
 import { BotController } from './controllers/bot.controller';
 import { BotService } from './services/bot.service';
+import { RewardController } from './controllers/reward.controller';
+import { RewardService } from './services/reward.service';
 
 @Module({
   imports: [
@@ -38,7 +40,8 @@ import { BotService } from './services/bot.service';
     ParamController,
     OrderController,
     LotteryController,
-    BotController
+    BotController,
+    RewardController
   ],
   providers: [
     UserService,
@@ -50,7 +53,8 @@ import { BotService } from './services/bot.service';
     ParamService,
     OrderService,
     LotteryService,
-    BotService
+    BotService,
+    RewardService
   ],
 })
 export class AdminModule {}

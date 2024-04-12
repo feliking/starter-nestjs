@@ -30,13 +30,57 @@ const saveDocument = async (collectionParam, data) => {
 };
 
 const main = async () => {
+  // Paramétros
+  await saveDocument('params', {
+    editable: true,
+    name: 'Whatsapp principal',
+    value: '72556828',
+  });
+  await saveDocument('params', {
+    editable: true,
+    name: 'Banco',
+    value: 'Banco Unión',
+  });
+  await saveDocument('params', {
+    editable: false,
+    name: 'Código QR',
+    value: '',
+  });
+  await saveDocument('params', {
+    editable: true,
+    name: 'Whatsapp Bot',
+    value: '62312843',
+  });
+  await saveDocument('params', {
+    editable: true,
+    name: 'Cuenta bancaria(Transferencias)',
+    value: '1000000342334',
+  });
+  await saveDocument('delivery_types', {
+    name: 'Encomienda',
+    state: true,
+  });
+  await saveDocument('delivery_types', {
+    name: 'Domicilio (de 1 a 3 días habiles)',
+    state: false,
+  });
+  await saveDocument('delivery_types', {
+    name: 'En tienda (10% de descuento)',
+    state: true,
+  });
+  await saveDocument('delivery_types', {
+    name: 'Punto de entrega',
+    state: true,
+  });
   await saveDocument('users', {
-    email: 'felix@felix.com',
-    name: 'Felix Mamani',
-    password: await bcrypt.hash('felix', 10),
-    phone: '77777777',
+    email: 'admin@admin.com',
+    name: 'Administrador',
+    password: await bcrypt.hash('admin', 10),
+    phone: '72556828',
     roles: [{ name: 'Administrador' }],
   });
+  console.log('Base de datos inicializada correctamente');
+  process.exit(1);
 };
 
 main();
